@@ -1,8 +1,8 @@
 import cv2 as cv
 import numpy as np
 
-cap = cv.VideoCapture('eye_recording.flv')
-#cap = cv.VideoCapture(0)
+#cap = cv.VideoCapture('eye_recording.flv')
+cap = cv.VideoCapture(0)
 
 font = cv.FONT_HERSHEY_SIMPLEX
 count = 0
@@ -52,7 +52,7 @@ while cap.isOpened():
 
     cv.imshow('Roi', roi)
     #print(vel)
-    if cv.waitKey(1) == ord('q'):
+    if cv.waitKey(25) & 0xFF == ord('q'):
         break
 cap.release()
 cv.destroyAllWindows()
